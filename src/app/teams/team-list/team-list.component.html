@@ -1,0 +1,17 @@
+<p>list-teams component </p>
+
+<div class="row">
+  
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <!--
+       TeamItemComponent :  @Output() selectedTeam = new EventEmitter<Team>();
+                                      onSelectItem() {
+                                        this.selectedTeam.emit(this.team);
+                                      }
+    -->
+    <app-team-item *ngFor="let team of teams" [team]="team" (selectedTeam)="onSelectTeam($event)"></app-team-item>
+  </div>
+</div>

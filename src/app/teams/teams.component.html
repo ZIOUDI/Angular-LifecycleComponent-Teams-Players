@@ -1,0 +1,23 @@
+
+<p>teams component </p>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <!--
+      TeamListComponent :  @Output() selectedTeam = new EventEmitter<Team>();
+                          onSelectTeam(team) { this.selectedTeam.emit(team);   }
+
+      TeamsComponent    : onSelectTeam(team) { this.selectedTeam = team; }
+    -->
+    <app-team-list (selectedTeam)="onSelectTeam($event)"></app-team-list>
+  </div>
+  <div class="col-sm-6">
+    <!-- 
+      TeamDetailComponent : @Input() team: Team;
+      -->
+    <team-detail [team]="selectedTeam" *ngIf="selectedTeam"></team-detail>
+  </div>
+</div>
+
+
