@@ -9,6 +9,7 @@ import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
 import { TeamItemComponent } from './teams/team-list/team-item/team-item.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerEditComponent } from './players/player-edit/player-edit.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PlayerEditComponent } from './players/player-edit/player-edit.component
     TeamDetailComponent,
     TeamItemComponent,
     PlayersComponent,
-    PlayerEditComponent
+    PlayerEditComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule
