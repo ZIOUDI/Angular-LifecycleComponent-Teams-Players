@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges }
+       from '@angular/core';
 
 @Component({
   selector: 'child',
@@ -8,6 +9,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from
 export class ChildComponent implements OnInit,OnChanges {
 
   private myNumber : number;
+    indexOnChanges : number = 0;
   constructor() { }
 
   @Input()
@@ -15,10 +17,12 @@ export class ChildComponent implements OnInit,OnChanges {
   set myNewNumber(value){ this.myNumber = value; }
 
   ngOnChanges(changes: SimpleChanges) {
-     console.log('ngOnChanges...: ', changes)
+     console.log('ngOnChanges n° '+this.indexOnChanges +' : ', changes);
+     this.indexOnChanges++;
   }
 
 ngOnInit(): void {
-  }
+  console.log('ngOnInit...: ', this.myNewNumber)
+}
 
 }

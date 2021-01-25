@@ -9,7 +9,7 @@ import { Team } from '../models/team.model';
 export class TeamsComponent implements OnInit {
 
   selectedTeam: Team;
-  
+
 
   onSelectTeam(team) {
     console.log('3.Teams : onSelectTeam(team)-Emit = ' + team)
@@ -19,12 +19,12 @@ export class TeamsComponent implements OnInit {
 
   }
 
-  constructor() { console.log('-Constructeur' )}
+  constructor() { console.log('---' )}
   ngOnChanges( ) {
    }
   ngOnInit(): void {
    }
-  /* 
+  /*
   ngOnDoChck( ) {
     console.log('-ngOnCheck-' )
   }
