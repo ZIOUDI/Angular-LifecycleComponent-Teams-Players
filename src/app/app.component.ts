@@ -14,10 +14,21 @@ export class AppComponent {
 
 private number : number = 132546;
 
-get counter()     { return this.number; }
-set counter(value){ this.number = value;}
+ name : number = 31;
+ user = {name :"zioudi",prof :"dev"}
 
-increment(){  this.counter++;}
-decrement(){  this.counter--;}
+ updateParam(value) {
+ console.log('------modifier Param------');
+ this.name=value }
+ updateObject(value){
+ console.log('------modifier Object-----');
+ this.user.name=value }
+
+ get counter()     { return this.number; }
+ set counter(value){ this.number = value;}
+
+  increment(){  this.counter++;}
+  decrement(){  this.counter--;}
 
 }
+

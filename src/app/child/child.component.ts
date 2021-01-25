@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges }
+import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges ,DoCheck }
        from '@angular/core';
 
 @Component({
@@ -6,10 +6,12 @@ import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges }
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnInit,OnChanges {
+export class ChildComponent implements OnInit,OnChanges , DoCheck {
 
   private myNumber : number;
+
     indexOnChanges : number = 0;
+    indexDoCheck  : number = 0;
   constructor() { }
 
   @Input()
@@ -22,7 +24,12 @@ export class ChildComponent implements OnInit,OnChanges {
   }
 
 ngOnInit(): void {
-  console.log('ngOnInit...: ', this.myNewNumber)
+  console.log('ngOnInit...une seule fois : ', this.myNewNumber)
 }
+ngDoCheck() {
+   console.log('ngDoCheck n° : ',  this.indexDoCheck  )
+   this.indexDoCheck++;
+}
+
 
 }

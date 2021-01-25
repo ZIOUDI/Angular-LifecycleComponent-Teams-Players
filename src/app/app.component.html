@@ -6,16 +6,20 @@
   <div class="row">
     <div class="col-sm-12">
 
-      <teams *ngIf="feature === 'teams'"></teams>
+      <teams *ngIf="feature === 'teams-false'"></teams>
 
-      <players *ngIf="feature === 'players'"></players>
+      <players *ngIf="feature === 'players-false'"></players>
       <br> <br>
 
-      ----appComponent----   ngOnChanges() ----------- <br> <br>
+      ----   ngOnChanges() ----------- <br> <br>
 
       <button class="btn btn-success" (click)="increment()"> Addition</button> + vs -
       <button class="btn btn-danger" (click)="decrement()"> Substruct </button>
       <child [myNewNumber]="counter" ></child>
+      ----   ngDoCheck() ----------- <br> <br>
+      <button class="btn btn-warning" (click)="updateParam('Hassine')"> modifier Pram</button> -ou-
+      <button class="btn btn-info"   (click)="updateObject('Hassine')"> modifier object</button>
+
 
     </div>
   </div>
